@@ -1,0 +1,11 @@
+웹(앱) 개발 : 프론트 / 백엔드
+- frontend : html, css, javascript, react, vue....
+- backend : node.js, java, python, 닷넷....
+- 기반기술 : 서버, 네트워크
+
+- 브라우저 기반
+- 브라우저를 통해서 실행될 수 있는 언어
+  1. HTML(HyperText Markup Language)
+     웹 브라우저에서 표시되도록 설계된 표준 마크업 언어
+     태그
+     화면 구조 설계
