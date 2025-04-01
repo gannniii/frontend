@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1+h2 {
+            color: red;
+        }
+
+        h1~h2 {
+            color: blue;
+        }
+        #container > h1 + ul {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">기본문법</h1>
+    <h2>형제 선택자</h2>
+    <h2>형제 선택자</h2>
+    <nav>
+        <h2>제목</h2>
+    </nav>
+    <section id="container">
+
+        <h1>예약 방법 및 요금</h1>
+        <ul>
+            <li>직접통화</li>
+            <li>문자남기기</li>
+        </ul>
+        <ul><li>1인 : 40,000원</li>
+            <li>1인 : 40,000원</li>
+            <li>1인 : 40,000원</li>
+            <li>1인 : 40,000원</li>
+        </ul>
+    </section>
+</body>
+
+</html>

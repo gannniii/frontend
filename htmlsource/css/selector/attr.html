@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            /* [target] {
+        text-decoration: none;
+    } */
+    [target="blank"] {
+        text-decoration: none;
+    }
+    [title~="dog"] {
+        border: 5px solid green;
+    }
+    [class^="test"] {
+        background: salmon;
+    }
+    [class$="test"] {
+        background: magenta;
+    }
+    [class*="test"] {
+        background: green;
+    }
+    /* font-weight : bold, border-radius : 20px, pading : 10px */
+    [class*="btn"] {
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    [class="btn-success"] {
+        color: green;
+    }
+    [class="btn-danger"] {
+        color: red;
+    }
+    </style>
+    [target] {
+        text-
+    }
+</head>
+<body>
+    <ul>
+        <li><a href="#" target="balnk">google</a></li>
+        <li><a href="#" target="balnk">naver</a></li>
+        <li><a href="#" target="balnk">daum</a></li>
+    </ul>
+    <img src="../../image/dog.jpg" alt="" title="cute dog">
+    <img src="../../image/dog.jpg" alt="" title="sound dog">
+    <img src="../../image/dog.jpg" alt="" title="pretty dog">
+    <div class="testing">First div</div>
+    <div class="second_test">First div</div>
+    <div class="test">First div</div>
+    <div class="test_ex">First div</div>
+    <button class="btn-success">Success</button>
+    <button class="btn-danger">Danger</button>
+    <button>Normal</button>
+</body>
+</html>
