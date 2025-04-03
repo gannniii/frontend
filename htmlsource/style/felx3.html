@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex; 
+            border: 2px solid;
+        }
+        .container div {
+            /* width: 100px; */
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            flex-grow: 1;
+            flex-basis: 0;
+        }
+        .container .item:nth-child(1) {
+            background: rgb(0, 108, 141);
+        }
+        .container .item:nth-child(2) {
+            background: rgb(240, 255, 152);
+        }
+        .container .item:nth-child(3) {
+            background: rgb(201, 114, 175);
+            flex-grow: 2;
+            order: 1;
+        }
+        .container .item:nth-child(4) {
+            background: rgb(107, 154, 243);
+        }
+        .container .item:nth-child(5) {
+            background: rgb(145, 103, 187);
+        }
+        .container .item:nth-child(6) {
+            background: rgb(255, 175, 28);
+            order: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        flex
+        - 수평 배치 : float, inline-block 사용
+           float : 해제 코드 필요 / inline-block : 자동처리되는 공백이 있음
+        - 수평 배치 개선 방법 : flex
+
+        flex
+        1) 컨테이너(상하, 좌우 배치되어야 할 아이켐을 가지고 있는 부모 요소)
+            - display, flex-direction, flex-wrap
+            - 주축 : dispaly:row일 때는 x축, display:column y축
+              교차축 : dispaly:row일 때는 y축, display:column x축
+            - justify-content :
+              1) flex-start : 왼쪽 정렬
+              1) flex-end : 오른쪽 정렬
+              1) center : 가운데 정렬
+              1) space-between : 첫 요소, 마지막 요소는 양쪽 끝으로 붙인 후 남은 여백 나눠서 할당
+              1) space-evenly : 모든 요소의 공백을 동일하게
+              1) space-around : 요소들의 좌우 여백을 동일하게(중첩되는 영역은 다른 영역보다 커짐)
+            - align-content : flex-wrap : wrap 상태에서 교차 축의 정렬 방법
+              justify-content와 동일
+            - align-irems : 한줄일 때 정렬
+
+        2) 아이템
+            - order : 기본값은 0, 기본 순서는 태그 순서임, 값이 클수록 뒤에 놓임
+            - flex-grow : 자식 요소들의 컨텐츠를 제외한 영역들의 공간이 1로 같아짐
+            - flex-basis : 자식 요소들의 컨텐츠를 포함하여 전체 너비를 1로 맞춤
+            - flex-shrink : 감소비율
+            - 축약형 : flex: 1 1 auto;
+    -->
+    <div class="container">
+        <div class="item">Good job</div>
+        <div class="item">A</div>
+        <div class="item">Hello World</div>
+        <!-- <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div> -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(253, 255, 157);
+        }
+        .box {
+            background-color: steelblue;
+            /* height: 50px;
+            overflow: hidden; */
+            overflow: hidden;
+        }
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both; /* float로 흘렀던 left, right 둘다 해제 */
+            display: block;
+        }
+        div p {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <img src="../image/left-arrow.png" alt="왼쪽" class="left">
+        <img src="../image/right-arrow.png" alt="오른쪽" class="right">
+        <p>Test</p>
+    </div>
+    <div>float 해제</div>
+</body>
+</html>
