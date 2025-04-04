@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 전체 여백 0 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #ecf0f1;
+      }
+      .wrapper {
+        width: 100%;
+        max-width: 60rem;
+        margin: 2rem auto;
+      }
+      .flexbg {
+        display: flex;
+      }
+      .flexbg main {
+        background-color: white;
+        padding: 25px;
+        order: 2;
+      }
+      .flexbg .sidebar {
+        padding: 25px;
+      }
+      .flexbg .left {
+        background-color: #3498db;
+        order: 1;
+      }
+      .flexbg .right {
+        background-color: #34495e;
+        order: 3;
+      }
+
+      @media screen and (max-width: 768px) {
+        .flexbg {
+          flex-wrap: wrap;
+        }
+
+    .flexbg .left {
+          order: 2;
+        }
+      }
+      .flexbg main {
+        order: 1;
+        width: 100%;
+      }
+      .flexbg .sidebar {
+        width: 50%;
+      }
+      .flexbg .right {
+
+        order: 3;
+      }
+    
+
+      @media screen and (max-width: 480px) {
+        .flexbg .sidebar {
+        width: 100%;
+      }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper flexbg">
+      <main>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt autem earum officia dolorem, placeat,
+          tempore similique, vero est accusantium adipisci ex quidem facilis! Deleniti reprehenderit eligendi hic, quo
+          tempora inventore! Velit, consequatur! Commodi rerum, architecto vero veniam quas, ut corporis iusto molestiae
+          sapiente ipsum minima deleniti consequuntur incidunt numquam exercitationem a dolor consectetur debitis
+          aspernatur. Hic assumenda consequatur explicabo, eligendi, sed sapiente deleniti earum voluptate reiciendis
+          rerum ea nulla magnam recusandae. Quis recusandae eius iste, quidem quaerat repudiandae. Quasi asperiores
+          molestiae iusto exercitationem, harum minus maiores facilis vel, possimus omnis nemo amet debitis labore,
+          dolorem voluptatum dolore vero impedit dolores.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt autem earum officia dolorem, placeat,
+          tempore similique, vero est accusantium adipisci ex quidem facilis! Deleniti reprehenderit eligendi hic, quo
+          tempora inventore! Velit, consequatur! Commodi rerum, architecto vero veniam quas, ut corporis iusto molestiae
+          sapiente ipsum minima deleniti consequuntur incidunt numquam exercitationem a dolor consectetur debitis
+          aspernatur. Hic assumenda consequatur explicabo, eligendi, sed sapiente deleniti earum voluptate reiciendis
+          rerum ea nulla magnam recusandae. Quis recusandae eius iste, quidem quaerat repudiandae. Quasi asperiores
+          molestiae iusto exercitationem, harum minus maiores facilis vel, possimus omnis nemo amet debitis labore,
+          dolorem voluptatum dolore vero impedit dolores.
+        </p>
+      </main>
+      <aside class="sidebar left">
+        <p>You might have some latest posts here on the left</p>
+      </aside>
+      <aside class="sidebar right">
+        <p>And some other widgets here on the right</p>
+      </aside>
+    </div>
+  </body>
+</html>
