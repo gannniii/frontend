@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button type="button">Turn on the light</button>
+      <img src="./pic_bulboff.gif" alt="" />
+      <button type="button">Turn off the light</button>
+    </div>
+    <script>
+      //   const btns = document.querySelectorAll("button");
+      const img = document.querySelector("img");
+      // Turn off the light 버튼 클릭 시 img src 변경 : "./pic_bulboff.gif"
+      //   btns[0].addEventListener("click", () => (img.src = "./pic_bulboff.gif"));
+      //   btns[1].addEventListener("click", () => (img.src = "./pic_bulbon.gif"));
+      // Turn on the light 버튼 클릭 시 img src 변경 : "./pic_bulbon.gif"
+
+      //   이벤트 버블링
+      document.querySelector("div").addEventListener("click", (e) => {
+        // 이벤트 어디서 왔을까? (id, class, name)
+        console.log(e.target.textContent);
+        console.log(typeof e.target.textContent);
+        const text = e.target.textContent;
+        // string => string 객체 메소드 이용
+        if (text.includes("on")) {
+          img.src = "./pic_bulbon.gif";
+        } else {
+          img.src = "./pic_bulboff.gif";
+        }
+      });
+    </script>
+  </body>
+</html>
