@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        height: 4000px;
+      }
+      .navbar {
+        position: fixed;
+        width: 100%;
+        z-index: 5;
+      }
+      .navbar-brand {
+        font-size: 45px;
+        transition: all 1s;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <span class="navbar-brand">JSShop</span>
+        <span class="badge bg-dark">Dark 🔁</span>
+      </div>
+    </nav>
+    <script>
+      // 사용자가 스크롤바를 내리면 상단의 글자 부분이 작아지는 이벤트 구현
+      window.addEventListener("scroll", () => {
+        console.log("세로 스크롤 위치", window.scrollY);
+
+        console.log("브라우저 viewport 높이", window.innerHeight);
+        console.log("브라우저 전체 높이", window.outerHeight);
+      });
+
+      const brand = document.querySelector(".navbar-brand");
+
+      if (window.scrollY > window.innerHeight / 2) {
+        brand.style.fontSize = "20px";
+      } else {
+        brand.style.fontSize = "45px";
+      }
+    </script>
+  </body>
+</html>

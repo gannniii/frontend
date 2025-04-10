@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .alert-box {
+        background: rgb(132, 210, 255);
+        padding: 20px;
+        color: white;
+        border-radius: 5px;
+        margin: 10px;
+        position: relative;
+        display: none;
+      }
+      button {
+        border: 0;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: rgb(255, 246, 160);
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+      }
+      .close {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="alert-box">
+      알림창
+      <span class="close">X</span>
+    </div>
+    <button class="show">버튼 1</button>
+    <button class="show">버튼 2</button>
+    <script>
+      const alertBox = document.querySelector(".alert-box");
+      // 버튼 1 클릭 시 알림창 => 아이디를 입력해주세요
+      const btns = document.querySelectorAll("button");
+
+      btns[0].addEventListener("click", () => {
+        alertBox.style.display = "block";
+        alertBox.firstChild.nodeValue = "아이디를 입력해주세요";
+        // alertBox.textContent = "아이디를 입력해주세요";
+      });
+      // 버튼 2 클릭 시 알림창 => 비밀번호를 입력해주세요
+      btns[1].addEventListener("click", () => {
+        alertBox.style.display = "block";
+        alertBox.firstChild.nodeValue = "비밀번호를 입력해주세요";
+      });
+
+      document.querySelector(".close").addEventListener("click", () => {
+        document.querySelector(".alert-box").style.display = "none";
+      });
+    </script>
+  </body>
+</html>
