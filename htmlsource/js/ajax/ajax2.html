@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        background-color: lightblue;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+      }
+      .container li {
+        list-style: none;
+        margin: 0 10px;
+        width: 25%;
+        cursor: pointer;
+      }
+      div {
+        padding: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid palevioletred;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <li>메뉴1</li>
+      <li>메뉴2</li>
+      <li>메뉴3</li>
+      <li>메뉴4</li>
+    </ul>
+    <div></div>
+    <script>
+      // 메뉴1
+      document.querySelector("li").addEventListener("click", () => {
+        fetch("https://gannniii.github.io/data.txt")
+          .then((res) => {
+            if (!res.ok) throw new Error("경로 확인");
+            return res.text();
+          })
+          .then((data) => {
+            console.log(data);
+            document.querySelector("div").innerHTML = data;
+          });
+      });
+
+      // 메뉴2
+      document.querySelector("ul li:nth-child(2)").addEventListener("click", () => {
+        fetch("https://gannniii.github.io/version.json")
+          .then((res) => {
+            if (!res.ok) throw new Error("경로 확인");
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            console.log(data.codename);
+            let result = `<ul>`;
+            result += `<li>version :  ${data.version}</li>`;
+            result += `<li>codename :  ${data.codename}</li>`;
+            result += `</ul>`;
+            document.querySelector("div").innerHTML = result;
+          });
+      });
+
+      // 메뉴3
+      document.querySelector("ul li:nth-child(3)").addEventListener("click", () => {
+        fetch("https://gannniii.github.io/version2.json")
+          .then((res) => {
+            if (!res.ok) throw new Error("경로 확인");
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            // console.log(data.codename);
+
+            let result = `<ul>`;
+            data.forEach((item) => {
+              result += `<li>version :  ${item.version}</li>`;
+              result += `<li>codename :  ${item.codename}</li>`;
+            });
+            result += `</ul>`;
+            document.querySelector("div").innerHTML = result;
+          });
+      });
+
+      // 메뉴4
+      document.querySelector("ul li:nth-child(4)").addEventListener("click", () => {
+        fetch("https://gannniii.github.io/MOCK_DATA.json")
+          .then((res) => {
+            if (!res.ok) throw new Error("경로 확인");
+            return res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            // console.log(data.codename);
+
+            // table 태그 작성 후 보여주기
+            // id / first_name / email / gender
+            let result = `<table>`;
+            result += `<tr>`;
+            result += `<th>id</th>`;
+            result += `<th>first_name</th>`;
+            result += `<th>email</th>`;
+            result += `<th>gender</th>`;
+            result += `<tr>`;
+            data.forEach((item) => {
+              result += `<tr>`;
+              result += `<td>${item.id}</td>`;
+              result += `<td>${item.first_name}</td>`;
+              result += `<td>${item.email}</td>`;
+              result += `<td>${item.gender}</td>`;
+              result += `<tr>`;
+            });
+            result += `<table>`;
+            document.querySelector("div").innerHTML = result;
+          });
+      });
+    </script>
+  </body>
+</html>

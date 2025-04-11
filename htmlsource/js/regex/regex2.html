@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <div>
+        <label for="name">이름</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <div>
+        <label for="tel">전화번호</label>
+        <input type="text" name="tel" id="tel" />
+      </div>
+      <button type="submit">전송</button>
+    </form>
+    <script>
+      const regName = /^[가-힣]{2, 5}$/;
+      document.querySelector("#name").addEventListener("change", (e) => {
+        let origin = e.target;
+
+        // 패턴과 일치하지 않을 때 경고창 보이기
+        if (!regName.test(origin.value)) {
+          alert("이름 확인");
+          origin.selelct();
+          return;
+        }
+      });
+
+      // 폼 전송 시 submit 중지 후 전화번호가 원하는 형식대로 입력 되었는지 확인
+      // 숫자3-숫자4-숫자4
+      const regEx = /\d{3}-\d{4}-\d{4}/;
+
+      //   document.querySelector("form").addEventListener("submit", (e) => {
+      //     e.preventDefault();
+
+      document.querySelector("#tel").addEventListener("change", (e) => {
+        let origin = e.target;
+
+        // 패턴과 일치하지 않을 때 경고창 보이기
+        if (!regEx.test(origin.value)) {
+          alert("전화번호 확인");
+          origin.selelct();
+          return;
+        }
+      });
+    </script>
+  </body>
+</html>

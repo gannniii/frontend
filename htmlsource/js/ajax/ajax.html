@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Title</h1>
+    <div></div>
+    <script>
+      fetch("https://gannniii.github.io/data.txt")
+        .then((res) => {
+          // res.ok == 200
+          //           400 (404-경로 틀림, 403-권한 없음)
+          //           500 (서버 에러)
+          if (!res.ok) throw new Error("경로 확인");
+          return res.text();
+        })
+        .then((data) => {
+          console.log(data);
+          // div 영역에 결과를 보여주기
+          document.querySelector("div").innerHTML = data;
+        });
+    </script>
+  </body>
+</html>
