@@ -1,7 +1,50 @@
 // post
 // ajax : 비동기식
-// fetch() : method를 사용하지 않으면 get 기본 방식임
-// axios()
+// fetch() : method를 사용하지 않으면 get 기본 방식임 - 브라우저 함수
+// axios() : 라이브러리 포함해야 함
+
+document.querySelector("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const form = e.target;
+
+  let mno = form.mno.value;
+
+  if (mno) {
+    // 폼 데이터 가져온 후 객체 생성
+    let data = {
+      mno: mno,
+      memoText: form.memoText.value,
+    };
+
+    fetch("http://localhost:8080/memo/update", {
+      method: "put",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  } else {
+    let data = {
+      memoText: form.memoText.value,
+    };
+
+    fetch("http://localhost:8080/memo/new", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  }
+});
 
 document.querySelector(".btn-danger").addEventListener("click", () => {
   // 사용자가 입력한 번호 가져오기
